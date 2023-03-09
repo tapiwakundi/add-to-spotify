@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 # Replace with your Spotify client ID and client secret
 client_id = 'YOUR_CLIENT_ID'
 client_secret = 'YOUR_CLIENT_ID'
+# Authenticate with Spotify using OAuth
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, scope='playlist-modify-public', redirect_uri='http://localhost:8888/callback'))
 
 # Replace with the URL of the playlist you want to copy
@@ -38,7 +39,6 @@ def getSongs():
 
 
 songs = getSongs()
-# Authenticate with Spotify using OAuth
 
 # Get the user's Spotify username
 user = sp.me()['id']
